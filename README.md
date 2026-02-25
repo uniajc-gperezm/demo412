@@ -60,7 +60,7 @@ La clase cuenta con 3 constructores sobrecargados:
 ## Diagrama de Clases UML (PlantUML)
 
 ```plantuml
-@startuml Persona
+@startuml DiagramaClases
 class Persona {
     - cedula: int
     + nombre: String
@@ -75,6 +75,24 @@ class Persona {
     - dormir(horas: int): void
     + caminar(pasos: int): int
 }
+
+class Estudiante {
+    + estudiarMateria: String
+    
+    ~ Estudiante()
+    + entregarTarea(materia: String): void
+    - revisarNota(materia: String): int
+}
+
+class Docente {
+    + imparteMateria: String
+    
+    ~ Docente()
+    + calificar(materia: String): int
+}
+
+Persona <|-- Estudiante
+Persona <|-- Docente
 @enduml
 ```
 
