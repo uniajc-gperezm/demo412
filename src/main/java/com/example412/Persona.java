@@ -1,6 +1,11 @@
 package com.example412;
 
 public class Persona {
+
+    // modificadores de acceso: public, private, protected
+    // public (+): se puede acceder desde cualquier clase
+    // private (-): solo se puede acceder desde la clase donde se declaro el atributo o metodo
+    // protected (#): se puede acceder desde la clase donde se declaro el atributo o metodo y
     
     // Atributos de la clase Persona
     // Caractetisticas que identifican a una clase Persona
@@ -8,6 +13,7 @@ public class Persona {
     public String nombre;
     public String correo;
     private int telefono;
+    protected int cuentaBancoria;
 
     // Constructor de la clase Persona
     // Constructor vacio
@@ -38,7 +44,7 @@ public class Persona {
         return saludo + " bien gracias!" ;
     }
 
-    public void dormir(int horas) {
+    private void dormir(int horas) {
         System.out.println("La persona duerme " + horas + " horas");
     }
 
