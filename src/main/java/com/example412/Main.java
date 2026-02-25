@@ -10,7 +10,7 @@ public class Main {
         // Llamar al metodo hablar de la clase Persona
         String saludo = persona1.hablar("Hola, como estas?");
 
-        persona1.dormir(8);
+        // persona1.dormir(8);
 
         System.out.println(saludo);
     }

@@ -96,4 +96,22 @@ class Persona {
     -dormir(int horas): void
     +caminar(int pasos): int
 }
+
+class Estudiante {
+    +estudiarMateria: String
+    
+    Estudiante()
+    +entregarTarea(materia: String): void
+    -revisarNota(materia: String): int
+}
+
+class Docente {
+    +imparteMateria: String
+    
+    Docente()
+    +calificar(materia: String): int
+}
+
+Persona <|-- Estudiante
+Persona <|-- Docente
 ```
