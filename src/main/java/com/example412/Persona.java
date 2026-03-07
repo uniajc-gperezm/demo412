@@ -1,5 +1,8 @@
 package com.example412;
 
+import java.time.LocalDate;
+import java.time.Period;
+
 public class Persona {
 
     // modificadores de acceso: public, private, protected
@@ -13,6 +16,9 @@ public class Persona {
     private String nombre;
     private String correo;
     private int telefono;
+    private LocalDate fechaNacimiento;
+    private String paisNacimiento;
+    private Character genero;
 
     // Constructor de la clase Persona
     // Constructor vacio
@@ -37,7 +43,6 @@ public class Persona {
 
     
     // metodos de la clase Persona
-
     public String getNombre() {
         return nombre;
     }
@@ -71,6 +76,30 @@ public class Persona {
         this.telefono = telefono;
     }
 
+    public LocalDate getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public String getPaisNacimiento() {
+        return paisNacimiento;
+    }
+
+    public void setPaisNacimiento(String paisNacimiento) {
+        this.paisNacimiento = paisNacimiento;
+    }
+
+    public Character getGenero() {
+        return genero;
+    }
+
+    public void setGenero(Character genero) {
+        this.genero = genero;
+    }
+
     public String hablar(String saludo) {
         //System.out.println(saludo);
         return saludo + " bien gracias!" ;
@@ -83,6 +112,37 @@ public class Persona {
     public int caminar(int pasos) {
         //System.out.println("La persona camina " + pasos + " pasos");
         return pasos;
+    }
+
+    public int calcularEdad() {
+        if (fechaNacimiento == null) {
+            return 0; // Si no se ha establecido la fecha de nacimiento, se devuelve 0
+        }
+
+        LocalDate fechaActual = LocalDate.now(); // Obtener la fecha actual
+
+        // Forma uno
+        // int anios = fechaActual.getYear() - fechaNacimiento.getYear(); // Calcular la edad restando el año de nacimiento al año actual
+
+
+        // Forma dos
+        int anios = Period.between(this.fechaNacimiento, fechaActual).getYears(); // Calcular el periodo entre la fecha de nacimiento y la fecha actual
+
+
+        return anios; // Devolver la edad calculada
+    }
+
+    public String toString() {
+        return "Persona{" +
+                "cedula=" + cedula +
+                ", nombre='" + nombre + '\'' +
+                ", correo='" + correo + '\'' +
+                ", telefono=" + telefono +
+                ", fechaNacimiento=" + fechaNacimiento +
+                ", paisNacimiento='" + paisNacimiento + '\'' +
+                ", genero=" + genero +
+                ", edad=" + calcularEdad() +
+                '}';
     }
 
 }

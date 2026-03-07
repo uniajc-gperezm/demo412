@@ -1,5 +1,7 @@
 package com.example412;
 
+import java.time.LocalDate;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -11,7 +13,15 @@ public class Main {
 
         persona1.setNombre("Maria Gomez");
 
+        LocalDate fechaNacimiento = LocalDate.of(2000, 03, 07);
+
+        persona1.setFechaNacimiento(fechaNacimiento);
+        persona1.setPaisNacimiento("Colombia");
+        persona1.setGenero('F');
+
         System.out.println("El nombre de la persona es: " + persona1.getNombre()); // Maria Gomez
+
+        System.out.println(persona1.toString());
 
         // Llamar al metodo hablar de la clase Persona
         String saludo = persona1.hablar("Hola, como estas?");
