@@ -10,10 +10,9 @@ public class Persona {
     // Atributos de la clase Persona
     // Caractetisticas que identifican a una clase Persona
     private int cedula;
-    public String nombre;
-    public String correo;
+    private String nombre;
+    private String correo;
     private int telefono;
-    protected int cuentaBancoria;
 
     // Constructor de la clase Persona
     // Constructor vacio
@@ -36,8 +35,41 @@ public class Persona {
         this.telefono = telefono;
     }
 
-
+    
     // metodos de la clase Persona
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+  
+
+    public int getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(int cedula) {
+        this.cedula = cedula;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
+    }
 
     public String hablar(String saludo) {
         //System.out.println(saludo);
